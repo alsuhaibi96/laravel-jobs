@@ -4,8 +4,20 @@ use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    $posts = Post::all();
-    return view('posts',compact('posts'));
+  $files=\Illuminate\Support\Facades\File::files(resource_path('posts'));
+  $posts=[];
+
+  foreach($files as $file){
+      $document=\Spatie\YamlFrontMatter\YamlFrontMatter::parseFile($file);
+      $posts[]= new Post(
+          $document->title,
+          $document->date,
+          $document->excerpt,
+          $document->body(),
+      );
+  }
+
+  return view('posts',compact('posts'));
 });
 
 Route::get('/posts/{post}', function ($slug) {
