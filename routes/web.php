@@ -5,15 +5,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
   $files=\Illuminate\Support\Facades\File::files(resource_path('posts'));
-  $posts=array_map(function ($file){
-      $document=\Spatie\YamlFrontMatter\YamlFrontMatter::parseFile($file);
-     return new Post(
-          $document->title,
-          $document->date,
-          $document->excerpt,
-          $document->body(),
-      );
-  },$files);
+
+  $posts=collect($files)
+   ->map(function ($file){
+       $document=\Spatie\YamlFrontMatter\YamlFrontMatter::parseFile($file);
+       return new Post(
+           $document->title,
+           $document->date,
+           $document->excerpt,
+           $document->body(),
+       );
+   });
 
   return view('posts',compact('posts'));
 });
