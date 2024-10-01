@@ -4,20 +4,9 @@ use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-  $files=\Illuminate\Support\Facades\File::files(resource_path('posts'));
-
-  $posts=collect($files)
-   ->map(function ($file){
-       $document=\Spatie\YamlFrontMatter\YamlFrontMatter::parseFile($file);
-       return new Post(
-           $document->title,
-           $document->date,
-           $document->excerpt,
-           $document->body(),
-       );
-   });
-
-  return view('posts',compact('posts'));
+  return view('posts',[
+      'posts' => Post::all()
+  ]);
 });
 
 Route::get('/posts/{post}', function ($slug) {
@@ -25,3 +14,6 @@ Route::get('/posts/{post}', function ($slug) {
     return view('post',compact('post'));
 })->where('post','[A-z_-]+');
 
+Route::get('/offline', function () {
+    return view('modules/laravelpwa/offline');
+});

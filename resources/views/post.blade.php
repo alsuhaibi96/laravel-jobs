@@ -1,12 +1,11 @@
-<!DOCTYPE>
-<html>
-<head>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-<article>
-   {!!$post!!}
-</article>
+@extends('layouts.layout')
+@section('content')
 
-</body>
-</html>
+    <article>
+        <h1>{{$post->title}}</h1>
+
+        <div>{!! $post->body !!}</div>
+
+    </article>
+
+@endsection

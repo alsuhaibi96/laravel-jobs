@@ -1,20 +1,16 @@
-<!DOCTYPE>
-<html>
-<head>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-<?php foreach ($posts as $post) :?>
-<article>
-<h1>
-    {{$post->title}}
-</h1>
+@extends('layouts.layout')
+@section('content')
+    @foreach ($posts as $post)
+    <article>
+        <h1>
+            <a href="/posts/<?= $post->slug;?>">
+                {{$post->title}}
+            </a>
+        </h1>
 
-    <div>
-        {!! $post->body !!}
-    </div>
-</article>
-<?php endforeach;?>
-
-</body>
-</html>
+        <div>
+            {!! $post->body !!}
+        </div>
+    </article>
+  @endforeach
+@endsection
