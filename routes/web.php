@@ -14,3 +14,8 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+
+Route::get('/callUs', function () {
+    return view('call-us');
+});
+
