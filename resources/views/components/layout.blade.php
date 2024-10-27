@@ -19,7 +19,9 @@
                             <x-nav-link href="/" :active="request()->is('/')" type="a" class=" rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</x-nav-link>
                             <x-nav-link href="/about" :active="request()->is('about')"  type="a" class="rounded-md px-3 py-2 text-sm font-medium">About</x-nav-link>
                             <x-nav-link href="/contact" :active="request()->is('contact')" type="a"  class="rounded-md px-3 py-2 text-sm font-medium">Contact</x-nav-link>
-                            <x-nav-link href="/callUs" :active="request()->is('callUs')" type="button"  class="rounded-md px-3 py-2 text-sm font-medium">Call</x-nav-link>
+                            <x-nav-link href="/jobs" :active="request()->is('callUs')"  class="rounded-md px-3 py-2 text-sm font-medium">Jobs</x-nav-link>
+                            <x-nav-link :active="request()->is('callUs')" type="button"  class="rounded-md px-3 py-2 text-sm font-medium">Call</x-nav-link>
+
                         </div>
                     </div>
                 </div>
