@@ -24,7 +24,7 @@ Route::get('/callUs', function () {
 
 Route::get('/jobs', function ()  {
     return view('jobs',[
-        'jobs'=> Job::with('employer')->get(),
+        'jobs'=> Job::with('employer')->cursorPaginate(3),
     ]);
 });
 

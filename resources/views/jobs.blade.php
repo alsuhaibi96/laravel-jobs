@@ -12,7 +12,10 @@
                 </label>
                 <strong>{{$job['title']}} :</strong> Pays  {{$job['salary']}}
             </a>
+
         @endforeach
+            {{$jobs->links()}}
+        
     </div>
 
 
