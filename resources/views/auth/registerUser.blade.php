@@ -11,7 +11,7 @@
                     <x-form-field>
                         <x-form-label for="title"> First Name </x-form-label>
                         <div class="mt-2">
-                            <x-form-input name="first_name" id="first_name" required></x-form-input>
+                            <x-form-input name="first_name" id="first_name" required value="{{old('first_name')}}"></x-form-input>
                             <x-form-error name="first_name" />
                         </div>
                     </x-form-field>
@@ -19,17 +19,17 @@
                     <x-form-field>
                         <x-form-label for="last_name"> Last Name </x-form-label>
                         <div class="mt-2">
-                            <x-form-input name="last_name" id="last_name"  required></x-form-input>
+                            <x-form-input name="last_name" id="last_name" value="{{old('last_name')}}" required></x-form-input>
                             <x-form-error name="last_name" />
                         </div>
                     </x-form-field>
 
 
                     <x-form-field>
-                        <x-form-label for="last_name"> Email </x-form-label>
+                        <x-form-label for="email"> Email </x-form-label>
                         <div class="mt-2">
-                            <x-form-input name="last_name" id="last_name"  required type="email"></x-form-input>
-                            <x-form-error name="last_name" />
+                            <x-form-input name="email" id="email" value="{{old('last_name')}}" required type="email"></x-form-input>
+                            <x-form-error name="email" />
                         </div>
                     </x-form-field>
 
@@ -37,7 +37,7 @@
                     <x-form-field>
                         <x-form-label for="password"> Password </x-form-label>
                         <div class="mt-2">
-                            <x-form-input name="password" id="password"  required></x-form-input>
+                            <x-form-input name="password" id="password"  type="password" required></x-form-input>
                             <x-form-error name="password" />
                         </div>
                     </x-form-field>
@@ -46,7 +46,7 @@
                     <x-form-field>
                         <x-form-label for="password_confirmation"> Password Confirmation</x-form-label>
                         <div class="mt-2">
-                            <x-form-input name="password_confirmation" id="password_confirmation"  required></x-form-input>
+                            <x-form-input name="password_confirmation" id="password_confirmation"  type="password" required></x-form-input>
                             <x-form-error name="password_confirmation" />
                         </div>
                     </x-form-field>

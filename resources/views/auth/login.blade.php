@@ -10,17 +10,17 @@
                 <div class=" grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
 
                     <x-form-field>
-                        <x-form-label for="last_name"> Email </x-form-label>
+                        <x-form-label for="email"> Email </x-form-label>
                         <div class="mt-2">
-                            <x-form-input name="last_name" id="last_name"  required type="email"></x-form-input>
-                            <x-form-error name="last_name" />
+                            <x-form-input name="email" id="email"  required type="email" :value="old('email')"></x-form-input>
+                            <x-form-error name="email" />
                         </div>
                     </x-form-field>
 
                     <x-form-field>
                         <x-form-label for="password"> Password </x-form-label>
                         <div class="mt-2">
-                            <x-form-input name="password" id="password"  required></x-form-input>
+                            <x-form-input name="password" id="password" type="password" required></x-form-input>
                             <x-form-error name="password" />
                         </div>
                     </x-form-field>
