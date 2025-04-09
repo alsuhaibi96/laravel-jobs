@@ -14,6 +14,9 @@ Route::view('about', 'about');
 Route::view('callUs', 'call-us');
 Route::view('contact', 'contact');
 
+Route::get('mail-test',function(){
+   return new \App\Mail\JobPosted();
+});
 //Route::resource('jobs',JobController::class);
 Route::get('/jobs', [JobController::class, 'index'])->name('jobs.index');
 Route::get('/jobs/create', [JobController::class, 'create'])->name('jobs.create');
