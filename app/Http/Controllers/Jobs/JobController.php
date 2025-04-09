@@ -45,6 +45,9 @@ class JobController extends Controller
           return redirect('/login');
        }
       Gate::authorize('edit-job',$job);
+
+       //there are also
+        //gate dines and gate allows
         return view('jobs.edit',compact('job'));
 
     }
