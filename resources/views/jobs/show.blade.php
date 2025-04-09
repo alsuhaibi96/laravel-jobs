@@ -9,9 +9,11 @@
 
 
     <div class="mt-4" >
+        @can('edit-job',$job)
         <x-button href="{{$job->id}}/edit" >
             Edit job
         </x-button>
+        @endcan
     </div>
 
 </x-layout>
